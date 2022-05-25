@@ -3,7 +3,6 @@ package com.banking.cqrs.core.domain;
 import com.banking.cqrs.core.events.BaseEvent;
 import com.banking.cqrs.core.messages.Message;
 import lombok.experimental.var;
-
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +18,10 @@ public abstract class AggregateRoot {
 
     public String getId(){
         return this.id;
+    }
+
+    public int getVersion(){
+        return this.version;
     }
 
     public void setVersion(int version){
