@@ -23,7 +23,7 @@ public class AccountAggregate extends AggregateRoot {
         raiseEvent(AccountOpenedEvent.builder()
                 .id(command.getId())
                 .accountHolder(command.getAccountHolder())
-                .createDate(new Date())
+                .createdDate(new Date())
                 .accountType(command.getAccountType())
                 .openingBalance(command.getOpeningBalance())
                 .build());
