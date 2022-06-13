@@ -4,7 +4,7 @@ import com.banking.account.cmd.domain.AccountAggregate;
 import com.banking.cqrs.core.domain.AggregateRoot;
 import com.banking.cqrs.core.handlers.EventSourcingHandler;
 import com.banking.cqrs.core.infrastructure.EventStore;
-import lombok.experimental.var;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class AccountEventSourcingHandler implements EventSourcingHandler<Account
     @Override
     public void save(AggregateRoot aggregate) {
         eventStore.saveEvents(aggregate.getId(), aggregate.getUncommitedChanges(), aggregate.getVersion());
-        aggregate.markChangesAsCommited();
+        aggregate.markChangesAsCommitted();
 
     }
 

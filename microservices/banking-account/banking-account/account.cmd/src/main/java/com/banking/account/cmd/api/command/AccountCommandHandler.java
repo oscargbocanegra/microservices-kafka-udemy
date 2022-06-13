@@ -2,7 +2,7 @@ package com.banking.account.cmd.api.command;
 
 import com.banking.account.cmd.domain.AccountAggregate;
 import com.banking.cqrs.core.handlers.EventSourcingHandler;
-import lombok.experimental.var;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

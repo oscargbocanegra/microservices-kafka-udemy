@@ -1,8 +1,9 @@
 package com.banking.cqrs.core.domain;
 
 import com.banking.cqrs.core.events.BaseEvent;
-import com.banking.cqrs.core.messages.Message;
-import lombok.experimental.var;
+import lombok.var;
+
+
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +33,13 @@ public abstract class AggregateRoot {
         return this.changes;
     }
 
-    public void markChangesAsCommited(){
+    public void markChangesAsCommitted(){
         this.changes.clear();
     }
 
     protected void applyChange(BaseEvent event, Boolean isNewEvent){
         try {
-            var method = getClass().getDeclaredMethod("appy", getClass());
+            var method = getClass().getDeclaredMethod("apply", event.getClass());
             method.setAccessible(true);
             method.invoke(this, event);
         }catch (NoSuchMethodException e){

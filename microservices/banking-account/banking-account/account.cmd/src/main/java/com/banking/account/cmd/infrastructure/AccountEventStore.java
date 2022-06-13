@@ -8,7 +8,8 @@ import com.banking.cqrs.core.exeptions.AggregateNotFoundException;
 import com.banking.cqrs.core.exeptions.ConcurrencyException;
 import com.banking.cqrs.core.infrastructure.EventStore;
 import com.banking.cqrs.core.producers.EventProducer;
-import lombok.experimental.var;
+
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,7 @@ package com.banking.account.cmd.infrastructure;
 import com.banking.cqrs.core.commands.BaseCommand;
 import com.banking.cqrs.core.commands.CommandHandlerMethod;
 import com.banking.cqrs.core.infrastructure.CommandDispatcher;
-import lombok.experimental.var;
+import lombok.var;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -31,6 +31,7 @@ public class AccountCommandDispatcher implements CommandDispatcher {
         if(handlers.size() > 1){
             throw new RuntimeException("No puede enviar un command que tiene mas de un handler");
         }
+
         handlers.get(0).handle(command);
     }
 }

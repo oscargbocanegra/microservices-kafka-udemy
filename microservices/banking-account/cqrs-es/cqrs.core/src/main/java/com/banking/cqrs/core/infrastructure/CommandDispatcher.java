@@ -1,6 +1,5 @@
 package com.banking.cqrs.core.infrastructure;
 
-
 import com.banking.cqrs.core.commands.BaseCommand;
 import com.banking.cqrs.core.commands.CommandHandlerMethod;
 
